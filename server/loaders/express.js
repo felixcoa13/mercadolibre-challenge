@@ -7,11 +7,20 @@ import fs from 'fs';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import App from '../../src/App';
+import { StaticRouter } from 'react-router-dom';
 
 export default ({ app }) => {
+  // Load API routes
+  app.use(config.api.prefix, routes());
+
   // Load route for React Server Side Rendering
-  app.get('/', (req, res) => {
-    const app = ReactDOMServer.renderToString(<App />);
+  app.get('*', (req, res) => {
+    const context = {};
+    const app = ReactDOMServer.renderToString(
+      <StaticRouter location={req.url} context={context}>
+        <App />
+      </StaticRouter>
+    );
   
     const indexFile = path.resolve('./build/index.html');
     fs.readFile(indexFile, 'utf8', (err, data) => {
@@ -25,12 +34,7 @@ export default ({ app }) => {
       );
     });
   });
-  
   app.use(express.static('./build'));
-
-  // Load API routes
-  app.use(config.api.prefix, routes());
-
   /// catch 404 and forward to error handler
   app.use((req, res, next) => {
     const err = new Error('Not Found');
