@@ -1,0 +1,7 @@
+.main-container {
+    background: #eee;
+    min-height: 100%;
+    width: 100%;
+    position: absolute;
+    padding-bottom: 50px;
+}

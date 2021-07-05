@@ -5,19 +5,15 @@ const route = Router();
 function getCategories(filters) {
     if(!filters)
         return [];
-        console.log(filters);
     const filter = filters.find(f => f.id === "category");
     if(!filter || filter.values.length == 0)
         return [];
-        console.log(filter);
     const value = filter.values[0];            
     if(!value)
         return [];
-        console.log(value);
     const paths = value.path_from_root;
     if(!paths)
         return [];
-        console.log(paths);
     return paths.map(path => path.name)
 };
 
@@ -33,7 +29,7 @@ export default (app) => {
                 lastname: "Coa"
             },
             categories: getCategories(response.filters),
-            item: response.results.map(item => ({
+            items: response.results.map(item => ({
                 id: item.id,
                 title: item.title,
                 price: {
@@ -44,6 +40,7 @@ export default (app) => {
                 picture: item.thumbnail,
                 condition: item.condition,
                 free_shipping: item.shipping.free_shipping,
+                address: item.address.state_name
             }))
         };
         res.send(result);

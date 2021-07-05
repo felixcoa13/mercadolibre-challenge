@@ -17,7 +17,7 @@ export default ({ app }) => {
   
   // Load route for React Server Side Rendering
   app.get('*', (req, res) => {
-    const context = {};
+    const context = { requestQueryParams: req.query };
     const app = ReactDOMServer.renderToString(
       <StaticRouter location={req.url} context={context}>
         <App />

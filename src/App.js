@@ -1,19 +1,19 @@
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
-import ItemsList from './containers/ItemsList/ItemsList';
+import SearchResult from './containers/SearchResult/SearchResult';
 import ItemDetail from './containers/ItemDetail/ItemDetail';
 import Home from './containers/Home/Home';
 import Header from './common/components/Header/Header';
 
 function App() {
   return (
-    <>
+    <div className="main-container">
       <Header></Header>
       <Switch>
         <Route
           exact 
           path='/items'
-          render={(props) =><ItemsList {...props} />} 
+          render={(props) =><SearchResult {...props} />} 
         />
         <Route
           exact
@@ -26,7 +26,7 @@ function App() {
           render={(props) =><Home {...props} />}
         />
       </Switch>
-    </>
+    </div>
   );
 }
 

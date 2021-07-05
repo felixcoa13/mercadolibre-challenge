@@ -1,0 +1,7 @@
+.search-result-container {
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+    row-gap: 0;
+}

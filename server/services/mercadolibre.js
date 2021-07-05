@@ -14,7 +14,7 @@ async function get(url) {
 }
 
 export const searchItems = async (query) => {
-    return await get(`https://api.mercadolibre.com/sites/MLA/search?q=${query}`);
+    return await get(`https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=4`);
 }
 
 export const getItem = async (id) => {
