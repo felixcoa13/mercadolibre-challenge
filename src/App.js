@@ -5,7 +5,15 @@ import ItemDetail from './containers/ItemDetail/ItemDetail';
 import Home from './containers/Home/Home';
 import Header from './common/components/Header/Header';
 
-function App() {
+function App(props) {
+  function getQueryParam(paramName){
+    const queryParams = props?.location?.search;
+    if(!queryParams)
+      return null;
+    const query = new URLSearchParams(queryParams);
+    return query.get(paramName);
+  }
+
   return (
     <div className="main-container">
       <Header></Header>

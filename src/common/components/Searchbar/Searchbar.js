@@ -13,7 +13,8 @@ export default function Searchbar() {
                 autoCorrect="off" 
                 spellCheck="false" 
                 autoComplete="off" 
-                tabIndex="2" />
+                tabIndex="2"
+                required={true} />
             <button type="submit" className="nav-search-btn" tabIndex="3">
                 <img aria-label="Buscar" className="nav-icon-search" src={SearchIcon}></img>
             </button>
