@@ -3,7 +3,7 @@
     background-color: #ffe600;
     height: 60px;
 }
-.nav-bounds{
+.nav-bounds {
     padding: 0 50px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -19,4 +19,9 @@
     grid-row: 1;
     margin: 10px 0;
     margin-right: 20px;
+}
+@media only screen and (max-width: 768px){
+    .nav-bounds {
+        padding: 0;
+    }
 }
