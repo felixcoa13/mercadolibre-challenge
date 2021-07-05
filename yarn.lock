@@ -10406,6 +10406,13 @@ react-scripts@4.0.3:
   optionalDependencies:
     fsevents "^2.1.3"
 
+react-use-api@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/react-use-api/-/react-use-api-2.5.1.tgz#0a5fe6b44d1b59cd0fba8503a9459e53d84c76cb"
+  integrity sha512-UguevC+f8KeD9e7QyJ70Qzo1pMaop8GiHX0QLTVrvkMxe+7H2KD+ZOv4neT/C0ujMu/fruQJeMKrydoC2e8ABw==
+  dependencies:
+    lru-cache "^5.1.1"
+
 react@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"

@@ -8,6 +8,8 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import App from '../../src/App';
 import { StaticRouter } from 'react-router-dom';
+import { ApiProvider, injectSSRHtml } from 'react-use-api'
+import  axios from 'axios';
 
 export default ({ app }) => {
   // Load API routes
@@ -16,13 +18,24 @@ export default ({ app }) => {
   app.use(express.static('./build'));
   
   // Load route for React Server Side Rendering
-  app.get('*', (req, res) => {
+  app.get('*', async (req, res) => {
+    const apiContext = {
+      // configure your global options or SSR settings
+      settings: {
+        axios, // to set your custom axios instance
+        isSSR: () => true, // we are 100% sure here is SSR mode
+      },
+    }
     const context = { requestQueryParams: req.query };
-    const app = ReactDOMServer.renderToString(
-      <StaticRouter location={req.url} context={context}>
-        <App />
-      </StaticRouter>
-    );
+    const renderSSR = () =>
+    ReactDOMServer.renderToString(
+      <ApiProvider context={apiContext}>
+        <StaticRouter location={req.url} context={context}>
+          <App />
+        </StaticRouter>
+      </ApiProvider>
+    )
+    const html = await injectSSRHtml(apiContext, renderSSR)
   
     const indexFile = path.resolve('./build/index.html');
     fs.readFile(indexFile, 'utf8', (err, data) => {
@@ -32,7 +45,7 @@ export default ({ app }) => {
       }
   
       return res.send(
-        data.replace('<div id="root"></div>', `<div id="root">${app}</div>`)
+        data.replace('<div id="root"></div>', `<div id="root">${html}</div>`)
       );
     });
   });

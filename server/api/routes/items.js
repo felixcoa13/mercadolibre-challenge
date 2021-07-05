@@ -29,7 +29,7 @@ export default (app) => {
                 lastname: "Coa"
             },
             categories: getCategories(response.filters),
-            items: response.results.map(item => ({
+            items: response?.results?.map(item => ({
                 id: item.id,
                 title: item.title,
                 price: {

@@ -4,13 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { ApiProvider, loadApiCache } from 'react-use-api'
+
+loadApiCache();
 
 ReactDOM.hydrate(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App/>
-    </BrowserRouter>,
-  </React.StrictMode>,
+  <ApiProvider>
+    <React.StrictMode>
+      <BrowserRouter>
+        <App/>
+      </BrowserRouter>
+    </React.StrictMode>
+  </ApiProvider>,
   document.getElementById('root')
 );
 
