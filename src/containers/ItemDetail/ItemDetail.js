@@ -4,6 +4,8 @@ import Breadcrumb from '../SearchResult/components/Breadcrumb/Breadcrumb'
 import useApi from 'react-use-api'
 import { getItemCurrency, getItemPriceFormated, getCondition } from '../../common/utils'
 
+//Componente encargado de renderizar la pagina de detalle del item seleccionado.
+
 export default function ItemDetail(props) {
   const id = props.match.params.id;
 

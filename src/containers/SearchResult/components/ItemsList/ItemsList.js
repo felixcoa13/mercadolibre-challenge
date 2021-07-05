@@ -3,6 +3,8 @@ import React from 'react';
 import FreeShippingIcon from '../../../../assets/img/ic_shipping.png'
 import { getItemCurrency, getItemPriceFormated } from '../../../../common/utils'
 
+//Componente encargado de renderizar la lista de items.
+
 export default function ItemsList(props) {
     const items = props?.items;
     

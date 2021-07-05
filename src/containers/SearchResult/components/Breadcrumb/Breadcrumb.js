@@ -1,6 +1,8 @@
 import './Breadcrumb.css';
 import React from 'react';
 
+//Componente encargado de renderizar el Breadcrumb de las categorias de la busqueda.
+
 export default function Breadcrumb(props) {
   const categories = props?.categories;
   return <div className="breadcrumb">

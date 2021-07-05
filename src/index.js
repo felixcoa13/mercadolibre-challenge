@@ -8,6 +8,8 @@ import { ApiProvider, loadApiCache } from 'react-use-api'
 
 loadApiCache();
 
+//Es igual a render(), pero es utilizado para hidratar un contenedor cuyo contenido HTML fue renderizado por ReactDOMServer.
+//https://es.reactjs.org/docs/react-dom.html
 ReactDOM.hydrate(
   <ApiProvider>
     <React.StrictMode>

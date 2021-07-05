@@ -12,13 +12,16 @@ import { ApiProvider, injectSSRHtml } from 'react-use-api'
 import  axios from 'axios';
 
 export default ({ app }) => {
-  // Load API routes
+  // Carga las rutas de las APIs en la carpeta "api"
   app.use(config.api.prefix, routes());
   
   app.use(express.static('./build'));
   
-  // Load route for React Server Side Rendering
+  // Carga las rutas para React Server Side Rendering
   app.get('*', async (req, res) => {
+
+    //Configuración necesaria para hacer el SSR que contengan llamados a APIs:
+    //https://github.com/RyanRoll/react-use-api
     const apiContext = {
       // configure your global options or SSR settings
       settings: {
@@ -28,6 +31,8 @@ export default ({ app }) => {
     }
     const context = { requestQueryParams: req.query };
     const renderSSR = () =>
+    //Utilizando ReactDOMServer para realizar el SSR:
+    //https://es.reactjs.org/docs/react-dom-server.html
     ReactDOMServer.renderToString(
       <ApiProvider context={apiContext}>
         <StaticRouter location={req.url} context={context}>
@@ -43,7 +48,7 @@ export default ({ app }) => {
         console.error('Something went wrong:', err);
         return res.status(500).send('Oops, better luck next time!');
       }
-  
+      //Retorno el archivo renderizado al cliente para optimizar el SEO.
       return res.send(
         data.replace('<div id="root"></div>', `<div id="root">${html}</div>`)
       );

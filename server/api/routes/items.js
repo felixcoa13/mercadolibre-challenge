@@ -19,7 +19,8 @@ function getCategories(filters) {
 
 export default (app) => {
     app.use('/items', route);
-
+    //Endpoint encargado de realizar la busqueda de productos
+    //api/items?q=:query
     route.get('/', async (req, res) => {
         let q = req.query.q; 
         let response = await searchItems(q);
@@ -46,6 +47,8 @@ export default (app) => {
         res.send(result);
     });
 
+    //Endpoint encargado de realizar la busqueda de un producto dado un id
+    //api/items/:id
     route.get('/:id', async (req, res) => {
         let id = req.params.id;
         let item = await getItem(id);

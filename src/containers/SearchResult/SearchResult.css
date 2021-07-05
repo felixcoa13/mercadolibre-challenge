@@ -1,3 +1,4 @@
+/*Creando Grilla de 12 posiciones, igual a la indicada en la imagen de los diseños*/
 .search-result-container {
     padding: 0 50px;
     display: grid;

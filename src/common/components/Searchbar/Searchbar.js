@@ -2,6 +2,8 @@ import './Searchbar.css';
 import React from 'react';
 import SearchIcon from '../../../assets/img/ic_Search@2x.png.png'
 
+//Componente encargado de renderizar la barra de busqueda.
+
 export default function Searchbar() {
   return <form className="nav-search" action="/items" method="GET" role="search">
             <input type="text" className="nav-search-input" 

@@ -5,6 +5,7 @@ import ItemDetail from './containers/ItemDetail/ItemDetail';
 import Home from './containers/Home/Home';
 import Header from './common/components/Header/Header';
 
+//Configurando Rutas de la aplicación.
 function App(props) {
   return (
     <div className="main-container">
