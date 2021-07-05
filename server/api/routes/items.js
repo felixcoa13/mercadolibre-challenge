@@ -45,6 +45,7 @@ export default (app) => {
         };
         res.send(result);
     });
+
     route.get('/:id', async (req, res) => {
         let id = req.params.id;
         let item = await getItem(id);
@@ -62,9 +63,9 @@ export default (app) => {
                     amount: item.price,
                     decimals: 2
                 },
-                picture: item.pictures[0].url,
+                picture: item.pictures?.length > 0 && item.pictures[0].url,
                 condition: item.condition,
-                free_shipping: item.shipping.free_shipping,
+                free_shipping: item.shipping?.free_shipping,
                 sold_quantity: item.sold_quantity,
                 description: itemDescription.text || itemDescription.plain_text
             }
