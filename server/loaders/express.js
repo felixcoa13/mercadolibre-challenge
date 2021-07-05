@@ -12,7 +12,9 @@ import { StaticRouter } from 'react-router-dom';
 export default ({ app }) => {
   // Load API routes
   app.use(config.api.prefix, routes());
-
+  
+  app.use(express.static('./build'));
+  
   // Load route for React Server Side Rendering
   app.get('*', (req, res) => {
     const context = {};
@@ -34,7 +36,6 @@ export default ({ app }) => {
       );
     });
   });
-  app.use(express.static('./build'));
   /// catch 404 and forward to error handler
   app.use((req, res, next) => {
     const err = new Error('Not Found');
