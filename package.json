@@ -16,7 +16,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "dev:build-server": "SET NODE_ENV=development & webpack --config webpack.server.js --mode=development -w",
+    "dev:build-server": "cross-env NODE_ENV=development  webpack --config webpack.server.js --mode=development -w",
     "dev:start": "nodemon ./server-build/index.js",
     "dev": "npm-run-all --parallel build dev:*",
     "start": "react-scripts start",
@@ -48,6 +48,7 @@
     "@babel/preset-env": "7.10.4",
     "@babel/preset-react": "7.10.4",
     "babel-loader": "8.1.0",
+    "cross-env": "^7.0.3",
     "nodemon": "2.0.4",
     "npm-run-all": "4.1.5",
     "webpack": "4.44.2",
