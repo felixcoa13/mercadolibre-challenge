@@ -18,7 +18,7 @@ export default function ItemsList(props) {
                 <span className="price-container">
                     <span className="currency">{getItemCurrency(item)} </span>
                     <span>{getItemPriceFormated(item)} </span>
-                    {item.free_shipping && <img src={FreeShippingIcon}/>}
+                    {item.free_shipping && <img src={FreeShippingIcon} alt="Envío Gratis"/>}
                 </span>
                 <a href={`/items/${item.id}`} className="title">
                     <h2>{item.title}</h2>

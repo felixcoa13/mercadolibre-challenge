@@ -10,7 +10,7 @@ export const getItemPriceFormated = (item) => {
 }
 
 export const getCondition = (item) => {
-    if(item?.condition == "new")
+    if(item?.condition === "new")
       return 'Nuevo';
     return "Usado"
 }
