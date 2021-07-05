@@ -1,0 +1,21 @@
+.nav-header {
+    position: relative;
+    background-color: #ffe600;
+    height: 60px;
+}
+.nav-bounds{
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+}
+.nav-logo {
+    background-image: url('../../../assets/img/Logo_ML@2x.png.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 59px;
+    height: 40px;
+    grid-column: 2 / 3;
+    grid-row: 1;
+    margin: 10px 0;
+}
