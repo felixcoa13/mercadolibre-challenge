@@ -8,7 +8,7 @@ Luego para levantar la aplicación y el servidor SSR debes correr el siguiente c
 
 ### `yarn run dev`
 
-Este comando se encargara de realizar el build de la aplicación React y de la aplicación nodeJS, para luego levantar un servidor con la ayuda de [nodemon](https://nodemon.io/). 
+Este comando se encargara de realizar el build de la aplicación React y de la aplicación nodeJS, para luego levantar un servidor con la ayuda de [nodemon](https://nodemon.io/).
 
 # El proyecto fue creado con Create React App
 

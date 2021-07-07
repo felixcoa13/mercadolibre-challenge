@@ -2,8 +2,8 @@ import { Router } from 'express';
 import items from './routes/items';
 
 export default () => {
-	const app = Router();
-	items(app);
+  const app = Router();
+  items(app);
 
-	return app
-}
+  return app;
+};

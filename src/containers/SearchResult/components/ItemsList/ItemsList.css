@@ -1,91 +1,91 @@
 .card {
-    background-color: white;
-    border-radius: 4px;
+  background-color: white;
+  border-radius: 4px;
 }
 
 .items-list-container {
-    grid-column: 2 / 12;
+  grid-column: 2 / 12;
 }
 .item-container {
-    display: flex;
-    flex-direction: row;
-    border-bottom: solid 1px #eee;
-    margin: 16px;
-    position: relative;
+  display: flex;
+  flex-direction: row;
+  border-bottom: solid 1px #eee;
+  margin: 16px;
+  position: relative;
 }
 .item-container:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 .items-list-container .title {
-    padding-top: 32px;
-    font-size: 18px;
-    text-decoration: none;
-    color: #333;
-    display: inline-block;
+  padding-top: 32px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #333;
+  display: inline-block;
 }
 .items-list-container .title h2 {
-    font-size: 18px;
-    font-weight: normal;
-    margin: 0;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
 }
 
 .items-list-container .price-container {
-    font-size: 24px;
+  font-size: 24px;
 }
 .items-list-container .picture-container {
-    min-width: 180px;
-    width: 180px;
-    height: 180px;
-    border-radius: 4px;
-    margin-right: 16px;
-    position: relative;
+  min-width: 180px;
+  width: 180px;
+  height: 180px;
+  border-radius: 4px;
+  margin-right: 16px;
+  position: relative;
 }
 
-.items-list-container .picture-container .picture{
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    max-width: 100%;
-    max-height: 100%;
+.items-list-container .picture-container .picture {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .items-list-container .description-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 .items-list-container .address {
-    position: absolute;
-    top: 32px;
-    left: 80%;
-    font-size: 12px;
-    color: #999;
+  position: absolute;
+  top: 32px;
+  left: 80%;
+  font-size: 12px;
+  color: #999;
 }
 
-@media only screen and (max-width: 768px){
-    .item-container {
-        flex-direction: column;
-    }
-    .address {
-        top: 0;
-        left: initial;
-        right: 0;
-    }
-    .picture-container {
-        width: inherit;
-    }
-    .description-container {
-        width: initial;
-        margin: 20px;
-    }
+@media only screen and (max-width: 768px) {
+  .item-container {
+    flex-direction: column;
+  }
+  .address {
+    top: 0;
+    left: initial;
+    right: 0;
+  }
+  .picture-container {
+    width: inherit;
+  }
+  .description-container {
+    width: initial;
+    margin: 20px;
+  }
 }
 @media only screen and (max-width: 480px) {
-    .address {
-        position: relative;
-        margin: 10px 0px;
-    }
+  .address {
+    position: relative;
+    margin: 10px 0px;
+  }
 }

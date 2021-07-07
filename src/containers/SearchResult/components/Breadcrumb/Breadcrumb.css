@@ -1,9 +1,9 @@
 .breadcrumb {
-    margin:16px 0;
-    font-size: 14px;
-    grid-column: 2 / 12;
-    color: #999;
+  margin: 16px 0;
+  font-size: 14px;
+  grid-column: 2 / 12;
+  color: #999;
 }
 .breadcrumb span:last-child {
-    font-weight: bold;
+  font-weight: bold;
 }

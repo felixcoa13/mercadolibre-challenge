@@ -10,25 +10,27 @@ module.exports = {
 
   output: {
     path: path.resolve('server-build'),
-    filename: 'index.js'
+    filename: 'index.js',
   },
-
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        use: 'babel-loader', 
-        exclude: /node_modules/
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
       },
       {
         test: /\.css$/,
-        loader: "file-loader",
-        exclude: /node_modules/
+        loader: 'file-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
-        loader: 'url-loader?limit=100000'
-      }
-    ]
-  }
+        loader: 'url-loader?limit=100000',
+      },
+    ],
+  },
 };
